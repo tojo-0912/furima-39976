@@ -19,14 +19,23 @@ default: &default
 
 development:
   <<: *default
-  database: furima_39976_development
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  database: furima-39976_development
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: furima_39976_test
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  database: furima-39976_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -53,3 +62,5 @@ production:
   database: furima_39976_production
   username: furima_39976
   password: <%= ENV["FURIMA_39976_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
