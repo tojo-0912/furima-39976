@@ -14,7 +14,7 @@
 | birthday           | date   | null: false               |
 
 ### Association
-has_many : addresses
+has_many : orders
 has_many : items
 
 ## items テーブル
