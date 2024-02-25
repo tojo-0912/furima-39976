@@ -25,7 +25,7 @@ has_many : items
 | item_description     | text       | null: false                    |
 | category_id          | integer    | null: false                    |
 | state_id             | integer    | null: false                    |
-| shipping_charges_id	 | integer    | null: false                    |
+| shipping_charge_id	 | integer    | null: false                    |
 | shipment_region_id	 | integer    | null: false                    |
 | days_to_ship_id   	 | integer    | null: false                    |
 | price	               | integer    | null: false                    |
@@ -38,15 +38,15 @@ belongs_to :user
 
 ## addresses テーブル
 
-| Column            | Type       | Options                        |
-| ----------------  | ---------- | ------------------------------ |
-| postal_code       | string     | null: false                    |
-| prefecture_id     | integer    | null: false, foreign_key: true |
-| City              | string     | null: false, foreign_key: true |
-| house_number      | string     | null: false, foreign_key: true |
-| building_name     | string     | null: false, foreign_key: true |
-| phone_number      | string     | null: false, foreign_key: true |
-| purchase          | references | null: false, foreign_key: true |
+| Column              | Type       | Options                        |
+| ------------------  | ---------- | ------------------------------ |
+| postal_code         | string     | null: false                    |
+| shipment_region_id  | integer    | null: false, foreign_key: true |
+| City                | string     | null: false, foreign_key: true |
+| house_number        | string     | null: false, foreign_key: true |
+| building_name       | string     | null: false, foreign_key: true |
+| phone_number        | string     | null: false, foreign_key: true |
+| purchase            | references | null: false, foreign_key: true |
 
 
 ### Association
