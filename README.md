@@ -32,7 +32,7 @@ has_many : items
 | user                 | references | null: false, foreign_key: true |
 
 ### Association
-has_one :addresses
+has_one :order
 belongs_to :user
 
 
@@ -41,12 +41,12 @@ belongs_to :user
 | Column              | Type       | Options                        |
 | ------------------  | ---------- | ------------------------------ |
 | postal_code         | string     | null: false                    |
-| shipment_region_id  | integer    | null: false, foreign_key: true |
-| City                | string     | null: false, foreign_key: true |
-| house_number        | string     | null: false, foreign_key: true |
-| building_name       | string     | null: false, foreign_key: true |
-| phone_number        | string     | null: false, foreign_key: true |
-| purchase            | references | null: false, foreign_key: true |
+| shipment_region_id  | integer    | null: false                    |
+| city                | string     | null: false                    |
+| house_number        | string     | null: false                    |
+| building_name       | string     |                                |
+| phone_number        | string     | null: false                    |
+| order               | references | null: false, foreign_key: true |
 
 
 ### Association
