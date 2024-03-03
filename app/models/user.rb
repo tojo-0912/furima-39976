@@ -12,7 +12,6 @@ class User < ApplicationRecord
   validates :birthday, presence: true
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
-  validates_format_of :password, with: PASSWORD_REGEX, message: ''
+  validates_format_of :password, with: PASSWORD_REGEX, message: '半角英数字を含めて6文字以上で設定ください'
 
-  has_many :items
 end
