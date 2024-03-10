@@ -26,7 +26,7 @@ has_many : items
 | category_id          | integer    | null: false                    |
 | state_id             | integer    | null: false                    |
 | shipping_charge_id	 | integer    | null: false                    |
-| shipment_region_id	 | integer    | null: false                    |
+| shipment_region_id   | integer    | null: false                    |
 | days_to_ship_id   	 | integer    | null: false                    |
 | price	               | integer    | null: false                    |
 | user                 | references | null: false, foreign_key: true |
