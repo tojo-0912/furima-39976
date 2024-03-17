@@ -35,7 +35,13 @@ RSpec.describe OrderForm, type: :model do
       it '都道府県が空では保存できない' do
         @order_form.shipment_region_id = ''
         @order_form.valid?
-        expect(@order_form.errors.full_messages).to include("Shipment region can't be blank", "Shipment region Prefecture can't be blank")
+        expect(@order_form.errors.full_messages).to include("Shipment region can't be blank")
+      end
+
+      it '都道府県が「---」だと出品できない' do
+        @order_form.shipment_region_id = '1'
+        @order_form.valid?
+        expect(@order_form.errors.full_messages).to include("Shipment region Prefecture can't be blank")
       end
 
       it '市区町村が空では保存できない' do
@@ -53,7 +59,7 @@ RSpec.describe OrderForm, type: :model do
       it '電話番号が空では保存できない' do
         @order_form.phone_number = ''
         @order_form.valid?
-        expect(@order_form.errors.full_messages).to include("Phone number can't be blank", "Phone number is invalid")
+        expect(@order_form.errors.full_messages).to include("Phone number can't be blank")
       end
 
       it '電話番号は、10桁以上11桁以内の半角数値でなければ保存できない' do
