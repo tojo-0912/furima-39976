@@ -14,4 +14,7 @@ class User < ApplicationRecord
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
   validates_format_of :password, with: PASSWORD_REGEX, message: '半角英数字を含めて6文字以上で設定ください'
 
+  has_many :items
+  has_many :orders
+
 end
